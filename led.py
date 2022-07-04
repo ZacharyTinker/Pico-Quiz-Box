@@ -4,20 +4,20 @@ class LED:
     def __init__(self, pin_number, on=False):
         self.pin_number = pin_number
         self.pin = Pin(self.pin_number, Pin.OUT)
-        self.on = on
-        if self.on:
+        self.light_on = on
+        if self.light_on:
             self.pin.on()
 
     def toggle(self):
-        if self.on:
+        if self.light_on:
             self.off()
         else:
             self.on()
 
     def on(self):
-        self.on = True
+        self.light_on = True
         self.pin.on()
 
     def off(self):
-        self.on = False
+        self.light_on = False
         self.pin.off()
