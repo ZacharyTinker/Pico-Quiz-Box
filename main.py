@@ -11,7 +11,6 @@ LED_ON = False
 
 current_state = STATE_RESET
 
-# TODO: Make sure pin numbers are correct
 reset = Button(0)
 qm_led = LED(28)
 
