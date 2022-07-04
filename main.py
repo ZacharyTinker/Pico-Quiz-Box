@@ -69,6 +69,8 @@ while True:
     elif current_state == STATE_LIVE:
         if reset.is_toggled():
             qm_led.off()
+            for quizzer in quizzers:
+                quizzer.light(LED_OFF)
             current_state = STATE_RESET
             print(f"Reset button is toggled, state is now {current_state}")
             sleep(.1)
