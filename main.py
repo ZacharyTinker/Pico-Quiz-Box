@@ -6,6 +6,9 @@ STATE_TEST = "test"
 STATE_RESET = "reset"
 STATE_LIVE = "live"
 
+LED_OFF = False
+LED_ON = True
+
 current_state = STATE_RESET
 
 # TODO: Make sure pin numbers are correct
@@ -29,13 +32,16 @@ quizzers = [
 
 print("Starting up...")
 
-print(f"Current state is {current_state}")
+print(f"Current state is {current_state}, turning all lights off")
+
+for quizzer in quizzers:
+    quizzer.light(LED_OFF);
 
 while True:
     if current_state == STATE_RESET:
         for quizzer in quizzers:
             if quizzer.buzzer():
-                quizzer.light(True)
+                quizzer.light(LED_ON)
                 qm_led.on()
                 current_state = STATE_LIVE
                 print(f"{quizzer.name} pressed button, state is now {current_state}")
@@ -48,12 +54,12 @@ while True:
         for quizzer in quizzers:
             if quizzer.buzzer():
                 print(f"{quizzer.name} pressed button")
-                quizzer.light(True)
+                quizzer.light(LED_ON)
             else:
-                quizzer.light(False)
+                quizzer.light(LED_OFF)
         if reset.is_toggled():
             for quizzer in quizzers:
-                quizzer.light(False)
+                quizzer.light(LED_OFF)
             qm_led.off()
             current_state = STATE_RESET
             print(f"Reset button is toggled, state is now {current_state}")
