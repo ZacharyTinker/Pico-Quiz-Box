@@ -1,3 +1,4 @@
+from time import sleep
 from button import Button
 from led import LED
 from quizzer import Quizzer
@@ -49,6 +50,7 @@ while True:
         if reset.is_toggled():
             current_state = STATE_TEST
             print(f"Reset button is toggled, state is now {current_state}")
+            sleep(.1)
             qm_led.on()
     elif current_state == STATE_TEST:
         for quizzer in quizzers:
@@ -63,8 +65,10 @@ while True:
             qm_led.off()
             current_state = STATE_RESET
             print(f"Reset button is toggled, state is now {current_state}")
+            sleep(.1)
     elif current_state == STATE_LIVE:
         if reset.is_toggled():
             qm_led.off()
             current_state = STATE_RESET
             print(f"Reset button is toggled, state is now {current_state}")
+            sleep(.1)

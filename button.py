@@ -5,16 +5,15 @@ class Button:
     def __init__(self, pin_number):
         self.pin_number = pin_number
         self.pin = Pin(self.pin_number, Pin.IN, Pin.PULL_DOWN)
-        self.last_pressed = 0 
+        self.was_pressed = False 
 
     def is_pressed(self):
         if bool(self.pin.value()):
-            self.last_pressed = round(time() * 1000)
-            return True
+            self.was_pressed = True
         else:
-            return False
+            self.was_pressed = False
+        return self.was_pressed
 
     def is_toggled(self):
-        last_pressed = self.last_pressed
-        pressed = self.is_pressed()
-        return not pressed and (self.last_pressed - last_pressed < 50)
+        was_pressed = self.was_pressed
+        return not self.is_pressed() and was_pressed
