@@ -36,6 +36,7 @@ print(f"Current state is {current_state}, turning all lights off")
 
 for quizzer in quizzers:
     quizzer.light(LED_OFF);
+qm_led.off()
 
 while True:
     if current_state == STATE_RESET:
