@@ -5,8 +5,6 @@ class LED:
         self.pin_number = pin_number
         self.pin = Pin(self.pin_number, Pin.OUT)
         self.light_on = on
-        if self.light_on:
-            self.pin.on()
 
     def toggle(self):
         if self.light_on:
@@ -17,9 +15,7 @@ class LED:
     def on(self):
         self.light_on = True
         self.pin.on()
-        print(f"Turn off pin {self.pin_number}")
 
     def off(self):
         self.light_on = False
         self.pin.off()
-        print(f"Turn on pin {self.pin_number}")

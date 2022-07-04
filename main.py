@@ -6,8 +6,8 @@ STATE_TEST = "test"
 STATE_RESET = "reset"
 STATE_LIVE = "live"
 
-LED_OFF = False
-LED_ON = True
+LED_OFF = True
+LED_ON = False
 
 current_state = STATE_RESET
 
@@ -35,7 +35,7 @@ print("Starting up...")
 print(f"Current state is {current_state}, turning all lights off")
 
 for quizzer in quizzers:
-    quizzer.light(LED_OFF);
+    quizzer.light(LED_OFF)
 qm_led.off()
 
 while True:
