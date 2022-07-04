@@ -10,21 +10,21 @@ current_state = STATE_RESET
 
 # TODO: Make sure pin numbers are correct
 reset = Button(0)
-qm_led = LED(25)
+qm_led = LED(28)
 
 quizzers = [
-    Quizzer("Team 1 Seat 1", 0, 0),
-    Quizzer("Team 1 Seat 2", 0, 0),
-    Quizzer("Team 1 Seat 3", 0, 0),
-    Quizzer("Team 1 Seat 4", 0, 0),
-    Quizzer("Team 2 Seat 1", 0, 0),
-    Quizzer("Team 2 Seat 2", 0, 0),
-    Quizzer("Team 2 Seat 3", 0, 0),
-    Quizzer("Team 2 Seat 4", 0, 0),
-    Quizzer("Team 3 Seat 1", 0, 0),
-    Quizzer("Team 3 Seat 2", 0, 0),
-    Quizzer("Team 3 Seat 3", 0, 0),
-    Quizzer("Team 3 Seat 4", 0, 0)
+    Quizzer("Team 1 Seat 1", 1, 13),
+    Quizzer("Team 1 Seat 2", 2, 14),
+    Quizzer("Team 1 Seat 3", 3, 15),
+    Quizzer("Team 1 Seat 4", 4, 16),
+    Quizzer("Team 2 Seat 1", 5, 17),
+    Quizzer("Team 2 Seat 2", 6, 18),
+    Quizzer("Team 2 Seat 3", 7, 19),
+    Quizzer("Team 2 Seat 4", 8, 20),
+    Quizzer("Team 3 Seat 1", 9, 21),
+    Quizzer("Team 3 Seat 2", 10, 22),
+    Quizzer("Team 3 Seat 3", 11, 26),
+    Quizzer("Team 3 Seat 4", 12, 27)
 ]
 
 
