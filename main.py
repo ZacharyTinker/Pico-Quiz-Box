@@ -15,7 +15,7 @@ current_state = STATE_RESET
 current_time = time()
 state_switch_time = time()
 current_quizzer = None
-last_light_toggle_time = None
+last_light_toggle_time = time()
 
 reset = Button(0)
 qm_led = LED(28)
