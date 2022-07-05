@@ -9,9 +9,9 @@ class Quizzer:
 
     def buzzer(self):
         return self.button.is_pressed()
-    
+
     def light(self, on):
         if on:
             self.led.on()
         else:
-            self.led.off()   
+            self.led.off()
