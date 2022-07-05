@@ -1,4 +1,3 @@
-from async_timeout import current_task
 from machine import Pin
 from time import time
 

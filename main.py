@@ -1,5 +1,4 @@
-from time import sleep, strftime, time
-from datetime import datetime
+from time import sleep, time
 from button import Button
 from led import LED
 from quizzer import Quizzer
@@ -37,7 +36,9 @@ quizzers = [
 ]
 
 def log(message):
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] {message}")
+    # TODO: Show time along with message
+    # print(f"[{datetime.now().strftime('%H:%M:%S')}] {message}")
+    print(message)
 
 def switch_state(next_state):
     global current_state, state_switch_time
